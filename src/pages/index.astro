@@ -1,15 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import GeneralButton from '../components/GeneralButton.astro';
-import SendButton from '../components/SendButton.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import SearchInput from "../components/SearchInput.astro";
+import Li from "../components/Li.astro";
+import Console from "../components/Console.astro";
+import Categories from "../components/Categories.astro";
+import type { Code } from "astro:components";
 ---
 
-<Layout title='Sisw Demo'>
-	<main>
-		<Header/>
-		<div class="text-center">
-			<SendButton/>
-		</div>
-	</main>
+<Layout title="Sisw">
+  <main class="w-full min-w-fit max-w-full">
+    <Header />
+    <div class="h-56 flex gap-4 justify-center max-w-full min-w-fit">
+      <div
+        class="justify-center items-center text-center yrounded-xl w-11/12 mx-3 sm:mx-5 max-w-full min-w-fit">
+        <label for="searcher" class="text-center">
+          <b>Category: </b><span></span>
+          <b>/ Last Search: </b><span></span>
+        </label>
+        <SearchInput />
+        <div class="flex justify-items-start sm:items-center sm:justify-center w-full">
+          <Categories>
+            <Li title="Countries">🌍 Countries</Li>
+            <Li>🛒 E-Commerce</Li>
+            <Li>🥑 Foods</Li>
+            <Li>🌈 Colors</Li>
+          </Categories>
+        </div>
+        <div class="text-left sm:text-center items-center mt-32">
+          <Console />
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>

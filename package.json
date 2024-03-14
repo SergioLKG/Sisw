@@ -1,7 +1,7 @@
 {
-  "name": "c-users-usuarioo-desktop-tech-develop-proyectos-personal-sisw",
+  "name": "sisw",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
