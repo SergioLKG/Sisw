@@ -1,4 +1,10 @@
-<li class="hover:bg-neutral-300 hover:text-lime-600 p-2 first:rounded-t-lg last:rounded-b-lg" title="">
+<style>
+    #checklist input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;}
+</style>
+
+<li class="checked:bg-green-300 over:bg-neutral-300 hover:text-lime-600 hover:bg-slate-200 p-2 first:rounded-t-lg last:rounded-b-lg active:bg-green-200 select-none min-w-full transition-colors" title="">
     <slot name="before"/>
     <slot/>
     <slot name="after"/>

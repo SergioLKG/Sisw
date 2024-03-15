@@ -1,13 +1,53 @@
+---
+import Li from "../components/Li.astro";
+import {getCategoryId} from "../services/category.js";
+
+const currentCategory = await getCategoryId();
+---
+<script>
+</script>
+<style>
+/* Ocultar la flecha predeterminada de los detalles */
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
+}
+
+/* Agregar tu propia flecha SVG animada */
+summary::before {
+  content: url('arrow.svg');
+  vertical-align: top;
+}
+details[open] summary::before {
+  content: url('arrowdown.svg');
+}
+
+details[open] ul {
+  animation: infinite;
+}
+</style>
+
 <details
-            class="cursor-pointer sm:ml-[500px] ml-[80%]"
-            lang="en"
-            translate="yes"
-            title="Categories"
-            aria-label="Categories"
-            aria-labelledby="Categories"
-          >
-            <summary class="font-mono font-bold">Categories</summary>
-            <ul id="categories" class="shadow-md shadow-neutral-300 rounded-lg absolute bg-page-white w-32 mr-14">
-              <slot/>
-            </ul>
+  class="cursor-pointer sm:ml-[500px] ml-[380px] select-none"
+  lang="en"
+  translate="yes"
+  title="Categories"
+  aria-label="Categories"
+  aria-labelledby="Categories"
+>
+  <summary
+    class="font-sans font-semibold text-right mr-12 sm:-ml-12 md:m-0 min-w-fit max-w-full hover:font-bold"
+    >Categories</summary
+  >
+  <ul
+    id="categories"
+    class=" shadow-md shadow-neutral-300 rounded-lg absolute bg-page-white w-32 mr-14"
+  >
+    <Li>🌍 Countries</Li>
+    <Li>🛒 E-Commerce</Li>
+    <Li>🥑 Foods</Li>
+    <Li>🌈 Colors</Li>
+  </ul>
 </details>
